@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://340rjjt6i1s7"]
+
+[ext_resource type="Texture2D" uid="uid://pfikmywv5rhi" path="res://Assets/16x16 RPG Item Pack/Item__29.png" id="1_2mkts"]
+[ext_resource type="Script" path="res://Scripts/GUI/Inventory/item_data.gd" id="2_2eak1"]
+
+[resource]
+script = ExtResource("2_2eak1")
+type = 1
+item_name = "large_potion"
+item_damage = 0
+item_health = 10
+item_defense = 0
+stackable = true
+count = 1
+description = "This is a larege potion giving a large amount of health."
+item_texture = ExtResource("1_2mkts")

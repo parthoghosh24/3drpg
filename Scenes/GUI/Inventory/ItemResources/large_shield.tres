@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://37mrpgx5qkp"]
+
+[ext_resource type="Texture2D" uid="uid://b2v0a7shgfr6t" path="res://Assets/16x16 RPG Item Pack/Item__25.png" id="1_yryio"]
+[ext_resource type="Script" path="res://Scripts/GUI/Inventory/item_data.gd" id="2_e2ihw"]
+
+[resource]
+script = ExtResource("2_e2ihw")
+type = 3
+item_name = "large_shield"
+item_damage = 0
+item_health = 0
+item_defense = 5
+stackable = false
+count = 0
+description = "This is a large shield which provides large defence."
+item_texture = ExtResource("1_yryio")

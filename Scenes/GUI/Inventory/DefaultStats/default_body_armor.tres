@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d3fhjamiqqrwf"]
+
+[ext_resource type="Texture2D" uid="uid://bnyuvu251rgak" path="res://Assets/16x16 RPG Item Pack/Item__00.png" id="1_dp6d3"]
+[ext_resource type="Script" path="res://Scripts/GUI/Inventory/item_data.gd" id="2_hqajg"]
+
+[resource]
+script = ExtResource("2_hqajg")
+type = 5
+item_name = "Default Body Armor"
+item_damage = 0
+item_health = 0
+item_defense = 0
+stackable = false
+count = 0
+description = "This is a default body armor with no defense."
+item_texture = ExtResource("1_dp6d3")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://t6mjdqrwhycw"]
+
+[ext_resource type="Texture2D" uid="uid://cb4ht401w56om" path="res://Assets/16x16 RPG Item Pack/Item__46.png" id="1_ptgt2"]
+[ext_resource type="Script" path="res://Scripts/GUI/Inventory/item_data.gd" id="2_s7rw4"]
+
+[resource]
+script = ExtResource("2_s7rw4")
+type = 4
+item_name = "large_helmet"
+item_damage = 0
+item_health = 0
+item_defense = 5
+stackable = false
+count = 0
+description = "This is a large helmet which provides large defence."
+item_texture = ExtResource("1_ptgt2")

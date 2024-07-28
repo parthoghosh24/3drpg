@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce48ogefl35je"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/profile.gd" id="1_mx1jn"]
+
+[node name="Profile" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mx1jn")
+
+[node name="stats_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 261.0
+offset_right = 880.0
+offset_bottom = 482.0

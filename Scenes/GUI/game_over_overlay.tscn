@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqyhyaxliw4ql"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/game_over_overlay.gd" id="1_re5fb"]
+[ext_resource type="FontFile" uid="uid://b676ov7why4w5" path="res://Assets/joystix monospace.otf" id="1_u004i"]
+
+[node name="GameOverOverlay" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_re5fb")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 1162.0
+offset_bottom = 586.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1103.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 40
+text = "Game Over, Try Again!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 297.0
+offset_right = 642.0
+offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("1_u004i")
+text = "Retry!"
+
+[connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]

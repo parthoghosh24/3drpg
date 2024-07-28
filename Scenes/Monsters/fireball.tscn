@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://br76pexltcwbf"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/AI Ranged/fireball.gd" id="1_yp753"]
+
+[sub_resource type="Gradient" id="Gradient_wbnp6"]
+offsets = PackedFloat32Array(0, 0.495455, 1)
+colors = PackedColorArray(0.945098, 0, 0, 1, 0.066755, 0.066755, 0.066755, 1, 1, 0.239216, 0.211765, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e86f6"]
+gradient = SubResource("Gradient_wbnp6")
+
+[sub_resource type="Curve" id="Curve_d2vvc"]
+min_value = -1.0
+_data = [Vector2(0.00359711, -0.872), 0.0, 0.0, 0, 0, Vector2(0.248201, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0719999), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w83vj"]
+curve = SubResource("Curve_d2vvc")
+
+[sub_resource type="Curve" id="Curve_46tip"]
+_data = [Vector2(0.00719424, 0.048), 0.0, 0.0, 0, 0, Vector2(0.26259, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.528), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_uqfcp"]
+curve = SubResource("Curve_46tip")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1oc7i"]
+angle_max = 360.0
+direction = Vector3(-0.01, 1, 0.425)
+spread = 9.1
+initial_velocity_max = 1.0
+angular_velocity_max = 40.0
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+linear_accel_min = 1.0
+linear_accel_max = 5.0
+scale_min = 0.0
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_uqfcp")
+color_initial_ramp = SubResource("GradientTexture1D_e86f6")
+hue_variation_min = -0.2
+hue_variation_max = 0.2
+hue_variation_curve = SubResource("CurveTexture_w83vj")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tun7"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.941176, 0.113725, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ujwv"]
+material = SubResource("StandardMaterial3D_0tun7")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2wxvd"]
+radius = 0.299041
+
+[node name="Fireball" type="Area3D"]
+script = ExtResource("1_yp753")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 500
+lifetime = 0.3
+interp_to_end = 1.0
+randomness = 1.0
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_1oc7i")
+draw_pass_1 = SubResource("QuadMesh_0ujwv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2wxvd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
